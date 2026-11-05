@@ -1,1 +1,12 @@
 @import "tailwindcss";
+@theme {
+  --color-link: oklch(61.2% 0.178 254.8);
+  --color-bright-yellow: oklch(94.9% 0.183 106.1);
+  --color-oil-green: oklch(49% 0.1 108.1);
+  --color-light-blue: oklch(85.2% 0.077 249.3);
+  --color-light-beige: oklch(97% 0.03 83.6);
+
+  --font-radio: "Radio Canada Big", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+  --font-source-serif:  "Source Serif 4", serif;
+}
