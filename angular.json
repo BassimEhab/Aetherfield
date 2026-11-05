@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "BaseProject": {
+    "Aetherfield": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -69,10 +69,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "BaseProject:build:production"
+              "buildTarget": "Aetherfield:build:production"
             },
             "development": {
-              "buildTarget": "BaseProject:build:development"
+              "buildTarget": "Aetherfield:build:development"
             }
           },
           "defaultConfiguration": "development"
