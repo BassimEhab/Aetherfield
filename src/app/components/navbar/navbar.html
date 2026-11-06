@@ -2,8 +2,8 @@
 <div class="h-19 lg:hidden"></div>
 
 <nav class="fixed inset-x-0 z-50 top-0 flex flex-col lg:flex-row lg:justify-between lg:items-center p-5 lg:bg-white/[0.001] lg:backdrop-blur-md
-  font-radio transition-all duration-500 ease-in-out origin-top animate-slide-in" [class.bg-white]="isNavbarVisable"
-  [class.bg-transparent]="!isNavbarVisable">
+  font-radio transition-all duration-500 ease-in-out origin-top opacity-0 animate-slide-in"
+  [class.bg-white]="isNavbarVisable" [class.bg-transparent]="!isNavbarVisable">
   <div class="flex justify-between items-center w-full lg:w-auto">
     <h1 class="font-bold text-3xl">Aetherfield</h1>
     <i class="lg:hidden! text-3xl cursor-pointer" [class]="isNavbarVisable ? 'pi pi-times' : 'pi pi-plus'"

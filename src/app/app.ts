@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { Navbar } from './components/navbar/navbar';
+import { Home } from './components/home/home';
 
 @Component({
-  imports: [Navbar],
+  imports: [Navbar, Home],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
-export class App {}
+export class App { }
