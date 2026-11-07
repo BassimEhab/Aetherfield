@@ -12,6 +12,6 @@
 
 .animate-slide-in {
     animation: slideDown 1s ease-out forwards;
-    animation-delay: 1s;
+    animation-delay: .7s;
 
 }
