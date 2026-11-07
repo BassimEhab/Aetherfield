@@ -77,3 +77,32 @@
     <!-- Main Card -->
 
 </section>
+
+<section class="relative">
+    <div class="absolute inset-0 bg-[url(/image3.png)] bg-cover bg-center -z-10"></div>
+    <div class="flex flex-col gap-14 xl:items-center justify-center min-h-screen py-20">
+        @defer (on viewport) {
+        <!-- Section Title -->
+        <div class="opacity-0 animate-slide-up text-center leading-[0.85] lg:leading-18.75 mx-auto">
+            <h2 class="font-source-serif lg:text-[80px] text-[40px] font-medium tracking-tight">Built for clarity</h2>
+            <h2 class="font-radio lg:text-[80px] text-[40px] font-normal tracking-tighter">Designed for action</h2>
+        </div>
+        <!-- Cards -->
+        <div class="opacity-0 animation-slow-slide-up flex xl:flex-row flex-col gap-6 px-5">
+            @for (card of cards; track $index) {
+            <!-- Single Card -->
+            <div class="bg-white p-10 rounded-2xl flex flex-col gap-5 items-start xl:flex-1 xl:max-h-61.5">
+                <div><i [class]="card.icon" class="text-5xl"></i></div>
+                <div>
+                    <h2 class="font-radio font-medium text-[20px]">{{card.title}}</h2>
+                    <p class="font-source-serif text-[18px] font-normal">{{card.description}}</p>
+                </div>
+            </div>
+            }
+        </div>
+        } @placeholder {
+        <div></div>
+        }
+
+    </div>
+</section>
