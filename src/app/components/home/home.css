@@ -1,6 +1,6 @@
 @keyframes slideUp {
     from {
-        transform: translateY(200%);
+        transform: translateY(50px);
         opacity: 0;
     }
 
@@ -11,5 +11,25 @@
 }
 
 .animate-slide-up {
-    animation: slideUp 1s ease-out forwards;
+    animation: slideUp .8s ease-out forwards;
+}
+
+.animation-slow-slide-up {
+    animation: slideUp 1.2s ease-out .3s forwards;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-scale-up {
+    animation: scaleUp 0.5s ease-out .5s forwards;
 }

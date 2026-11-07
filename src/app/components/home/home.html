@@ -1,30 +1,79 @@
-<header class="bg-linear-to-b from-light-blue to-light-beige h-screen">
-    <div class="pt-36 mx-auto text-center max-w-257.5 flex flex-col gap-6 animate-slide-up">
-        <div class="space-y-3">
-            <div class="lg:-space-y-5">
-                <h2 class="font-source-serif lg:text-[80px] md:font-medium text-4xl">Sustainability insights,</h2>
-                <h2 class="font-radio lg:text-[80px] md:tracking-tighter text-4xl">built for business</h2>
+<section class="relative">
+    <!-- Background gradient -->
+    <div class="absolute inset-x-0 top-0 h-[70%] bg-linear-to-b from-light-blue to-light-beige -z-10"></div>
+
+    <div class="pt-36 px-4 mx-auto max-w-7xl flex flex-col items-center">
+        <!-- Hero Text -->
+        <div class="text-center max-w-257.5 flex flex-col gap-6 animate-slide-up">
+            <div class="space-y-3">
+                <div class="lg:-space-y-2">
+                    <h2 class="font-source-serif lg:text-[80px] md:font-semibold text-4xl">Sustainability insights,</h2>
+                    <h2 class="font-radio lg:text-[80px] md:tracking-tighter text-4xl">built for business</h2>
+                </div>
+                <p class="font-source-serif md:text-xl text-xl/tight mx-auto px-1 md:tracking-[-0.04em]">
+                    Track impact, reduce emissions, and accelerate progress—with clarity and confidence.
+                </p>
             </div>
-            <p class="font-source-serif md:text-xl text-xl/tight mx-auto px-1 md:tracking-[-0.04em]">
-                Track
-                impact,
-                reduce
-                emissions,
-                and
-                accelerate
-                progress—with clarity
-                and
-                confidence.</p>
+
+            <!-- Buttons -->
+            <div class="flex md:flex-row flex-col justify-center items-center gap-4 font-geist-mono text-sm">
+                <div class="px-4 py-2 bg-black text-white flex items-center gap-1 cursor-pointer">
+                    <span class="text-3xl leading-none -translate-y-2">.</span>
+                    <span>Request a demo</span>
+                </div>
+                <div class="px-4 py-2 bg-black text-white flex items-center gap-1 cursor-pointer">
+                    <span class="text-3xl leading-none -translate-y-2">.</span>
+                    <span>Explore the platform</span>
+                </div>
+            </div>
         </div>
-        <div class="flex md:flex-row flex-col justify-center items-center gap-4 font-geist-mono text-sm">
-            <div class="px-4 py-2 bg-black text-white flex items-center gap-1">
-                <span class="text-3xl leading-none -translate-y-2">.</span>
-                <span>Request a demo</span>
+
+        <!-- Hero Image -->
+        <div class="mt-12 w-full max-w-5xl opacity-0 animate-scale-up">
+            <img class="mx-auto w-full border rounded-2xl shadow-2xl bg-white" src="/image1.png" alt="dashboard">
+        </div>
+    </div>
+</section>
+
+<section class="py-40 bg-white space-y-10 mx-auto px-5">
+    <!-- Section Title -->
+    <div class="font-radio text-[40px] font-medium text-center tracking-tight leading-none mx-auto max-w-2xl">
+        <h2>Everything you need to measure, model, and act on sustainability</h2>
+    </div>
+    @defer (on viewport) {
+    <div class="opacity-0 animation-slow-slide-up flex flex-col xl:flex-row xl:justify-start gap-10">
+        <!-- Img Card -->
+        <div class="xl:max-w-173.25">
+            <img src="/image2.png" alt="Energy consumption rate.">
+        </div>
+        <!-- Features Card -->
+        <div class="flex grow flex-col justify-between">
+            <!-- List Of Features -->
+            <div class="space-y-2">
+                <!-- One Feature -->
+                @for (feature of features; track $index) {
+                <div class="border-b border-gray-200 flex flex-col gap-2 py-4">
+                    <div class="flex justify-between">
+                        <h2 class="font-radio font-medium text-[20px]">{{feature.feature}}</h2>
+                        <p class="font-geist-mono text-gray-500">{{feature.id}}</p>
+                    </div>
+                    <p class="font-source-serif text-[20px]">{{feature.description}}</p>
+                </div>
+                }
+
             </div>
-            <div class="px-4 py-2 bg-black text-white flex items-center gap-1"><span
-                    class="text-3xl leading-none -translate-y-2">.</span>
-                <span>Explore the platform</span>
+            <!-- Button -->
+            <div
+                class="px-3.5 py-2 mt-auto bg-black text-white cursor-pointer xl:self-start flex justify-center items-center font-geist-mono text-[14px]">
+                <span class="text-3xl leading-none -translate-y-2 -translate-x-1">.</span>
+                <span>Explore Features</span>
             </div>
         </div>
     </div>
-</header>
+    }
+    @placeholder {
+    <div class="placeholder-box"></div>
+    }
+    <!-- Main Card -->
+
+</section>
