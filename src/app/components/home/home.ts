@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CallToAction } from '../call-to-action/call-to-action';
+import { Button } from '../button/button';
 
 @Component({
-  imports: [CallToAction],
+  imports: [CallToAction, Button],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
