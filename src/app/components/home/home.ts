@@ -27,4 +27,15 @@ export class Home {
       { icon: 'pi pi-globe', title: 'Sustainability is a systems problem', description: 'We build tools that help teams connect the dots between operations, impact, and accountability.' },
       { icon: 'pi pi-arrow-circle-right', title: 'Progress over perfection', description: 'We support real-world momentum—helping organizations move from ambition to measurable change.' }
     ]
+
+  public articles: {
+    imgSrc: string,
+    title: string,
+    category: string,
+    duration: string,
+  }[] = [
+      { imgSrc: '/article1.avif', title: 'How to Build a Climate-Ready Data Stack', category: 'Insights', duration: '4 min' },
+      { imgSrc: '/article2.avif', title: 'Sustainability Isn\'t a Side Project: Making Impact Operational', category: 'Strategy', duration: '7 min' },
+      { imgSrc: '/article3.avif', title: 'Inside the Aetherfield Model: How We Turn Data Into Action', category: 'Insights', duration: '5 min' },
+    ]
 }
