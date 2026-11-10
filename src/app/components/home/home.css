@@ -33,3 +33,19 @@
 .animate-scale-up {
     animation: scaleUp 0.5s ease-out .5s forwards;
 }
+
+@keyframes rotation {
+    from {
+        opacity: 0;
+        transform: rotate(50deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(-10deg);
+    }
+}
+
+.animate-rotation {
+    animation: rotation 0.5s ease-out 1s forwards;
+}

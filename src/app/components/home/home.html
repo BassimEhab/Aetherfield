@@ -136,10 +136,11 @@
 <section class="relative max-h-320 overflow-hidden px-5 py-16">
   <div class="relative mx-auto max-w-155 flex flex-col items-center gap-10">
     <!-- SVG -->
-    <div class="absolute top-0 -left-50 rotate-[-10deg] scale-x-120">
+    @defer (on viewport) {
+    <div class="absolute top-0 -left-50 rotate-[-10deg] scale-x-120 opacity-0 animate-rotation">
       <img width="" src="/AetherfieldJournal.svg" alt="">
     </div>
-    <div class="flex flex-col items-center justify-center gap-10">
+    <div class="flex flex-col items-center justify-center gap-10  opacity-0 animate-slide-up">
       <h2 class="font-radio text-[40px] font-medium tracking-[-3%]">From the journal</h2>
       <!-- Articles -->
       <div class="flex flex-col max-w-155">
@@ -167,6 +168,10 @@
         <p>View all articles</p>
       </div>
     </div>
+    }
+    @placeholder {
+    <div></div>
+    }
   </div>
 </section>
 
