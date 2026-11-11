@@ -7,10 +7,12 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mx-auto">
         <!-- article -->
         @for (article of articleService.articles(); track article.id) {
-        <div class="flex flex-col gap-5 max-w-3xl">
+        <div class="flex flex-col gap-5 max-w-3xl cursor-pointer group" tabindex="0" role="link"
+            [routerLink]="['/article', article.id]">
             <div><img [src]="article.imgSrc" alt=""></div>
-            <div>
-                <h2 class="font-radio font-medium text-[20px] tracking-[-2%] leading-none"> {{article.title}}
+            <div class="transition-opacity duration-300 group-hover:opacity-60">
+                <h2 class="font-radio font-medium text-[20px] tracking-[-2%] leading-none">
+                    {{article.title}}
                 </h2>
                 <p
                     class="font-geist-mono font-normal text-[14px] leading-none mt-2 text-gray-500 flex items-center gap-2">
@@ -19,7 +21,10 @@
                     <span>{{article.duration}}</span>
                 </p>
             </div>
-            <p class="font-source-serif font-normal text-[20px] tracking-[-4%] leading-[1.2]">{{article.subTitle}}</p>
+            <p
+                class="font-source-serif font-normal text-[20px] tracking-[-4%] leading-[1.2] transition-opacity duration-300 group-hover:opacity-60">
+                {{article.subTitle}}
+            </p>
         </div>
         }
     </div>
