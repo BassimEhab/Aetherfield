@@ -1,1 +1,33 @@
-<p>journal works!</p>
+<section class="lg:pt-16">
+    <img src="/Journal.avif" alt="" class="">
+</section>
+
+<section class="px-5 pt-20 pb-10 mx-auto flex flex-col gap-10">
+    <h1 class="font-radio font-medium tracking-[-3%] text-[40px] text-center">Latest articles</h1>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mx-auto">
+        <!-- article -->
+        @for (article of articleService.articles(); track $index) {
+        <div class="flex flex-col gap-5 max-w-3xl">
+            <div><img [src]="article.imgSrc" alt=""></div>
+            <div>
+                <h2 class="font-radio font-medium text-[20px] tracking-[-2%] leading-none"> {{article.title}}
+                </h2>
+                <p
+                    class="font-geist-mono font-normal text-[14px] leading-none mt-2 text-gray-500 flex items-center gap-2">
+                    <span>{{article.category}}</span>
+                    <span class="-translate-y-1/5">.</span>
+                    <span>{{article.duration}}</span>
+                </p>
+            </div>
+            <p class="font-source-serif font-normal text-[20px] tracking-[-4%] leading-[1.2]">{{article.subTitle}}</p>
+        </div>
+        }
+    </div>
+</section>
+
+<app-call-to-action actionTitle="Subscribe to Aetherfield Journal"
+    actionButton="Sign up to newsletter"></app-call-to-action>
+
+<!-- 
+
+-->
