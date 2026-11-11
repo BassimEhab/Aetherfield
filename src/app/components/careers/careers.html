@@ -1,1 +1,30 @@
-<p>careers works!</p>
+<section class="fixed inset-0  h-full bg-linear-to-b from-light-blue to-light-beige -z-10"></section>
+
+<section class="py-20 px-10 flex flex-col items-center gap-6 ">
+    <!-- Headding Title -->
+    <div class="flex flex-col leading-none font-normal text-[80px] text-center mb-5 opacity-0 animate-slide-up">
+        <h1 class="font-source-serif tracking-[-4%] ">Careers at</h1>
+        <h2 class="font-radio tracking-[-5%]">Aetherfield</h2>
+    </div>
+    @for (career of careers; track $index) {
+    <div
+        class="bg-white p-10 flex lg:flex-row flex-col items-start rounded-2xl gap-6 opacity-0 animation-slow-slide-up">
+        <div class="flex flex-col max-w-154 gap-6">
+            <!-- Job Title -->
+            <div class="flex flex-col">
+                <h2 class="font-radio font-medium text-[20px] leading-none tracking-[-2%]">{{career.title}}</h2>
+                <p
+                    class="font-geist-mono font-normal text-[14px] leading-none mt-2 text-gray-500 flex items-center gap-2">
+                    <span>{{career.roleType}}</span>
+                    <span class="-translate-y-1/5">.</span>
+                    <span>{{career.location}}</span>
+                </p>
+            </div>
+            <!-- Job Short Description -->
+            <p class="font-source-serif font-normal text-[20px] leading-[1.2] tracking-[-4%]">
+                {{career.shortDescription}}</p>
+        </div>
+        <app-button buttonText="View role" [hideDot]="true"></app-button>
+    </div>
+    }
+</section>
