@@ -5,6 +5,7 @@ import { IArticles } from '../interfaces/iarticles';
 export class ArticleService {
     private articlesSignal = signal<IArticles[]>([
         {
+            id: 1,
             imgSrc: '/article1.avif',
             title: 'How to Build a Climate-Ready Data Stack',
             category: 'Insights', duration: '4 min',
@@ -36,6 +37,7 @@ export class ArticleService {
             ]
         },
         {
+            id: 2,
             imgSrc: '/article2.avif',
             title: 'Sustainability Isn\'t a Side Project: Making Impact Operational',
             category: 'Strategy',
@@ -68,6 +70,7 @@ export class ArticleService {
             ]
         },
         {
+            id: 3,
             imgSrc: '/article3.avif',
             title: 'Inside the Aetherfield Model: How We Turn Data Into Action',
             category: 'Insights',
@@ -100,6 +103,7 @@ export class ArticleService {
             ]
         },
         {
+            id: 4,
             imgSrc: '/article4.avif',
             title: 'From Spreadsheets to Systems: The Evolution of Climate Reporting',
             category: 'Tooling',
@@ -132,6 +136,7 @@ export class ArticleService {
             ]
         },
         {
+            id: 5,
             imgSrc: '/article5.avif',
             title: 'Carbon Accounting: Myths, Models, and Must-Haves',
             category: 'Tooling',
@@ -165,6 +170,7 @@ export class ArticleService {
             ]
         },
         {
+            id: 6,
             imgSrc: 'article6.avif',
             title: 'Seeing Clearly: Designing Feedback Loops for Sustainable Growth',
             category: 'Strategy',

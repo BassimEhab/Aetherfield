@@ -6,7 +6,7 @@
     <h1 class="font-radio font-medium tracking-[-3%] text-[40px] text-center">Latest articles</h1>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mx-auto">
         <!-- article -->
-        @for (article of articleService.articles(); track $index) {
+        @for (article of articleService.articles(); track article.id) {
         <div class="flex flex-col gap-5 max-w-3xl">
             <div><img [src]="article.imgSrc" alt=""></div>
             <div>
