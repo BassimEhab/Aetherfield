@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "primeicons/primeicons.css";
+
 @theme {
   --color-link: oklch(61.2% 0.178 254.8);
   --color-bright-yellow: oklch(94.9% 0.183 106.1);
@@ -9,5 +10,57 @@
 
   --font-radio: "Radio Canada Big", sans-serif;
   --font-geist-mono: "Geist Mono", monospace;
-  --font-source-serif:  "Source Serif 4", serif;
+  --font-source-serif: "Source Serif 4", serif;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp .8s ease-out forwards;
+}
+
+.animation-slow-slide-up {
+  animation: slideUp 1.2s ease-out .5s forwards;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.5s ease-out .5s forwards;
+}
+
+@keyframes rotation {
+  from {
+    opacity: 0;
+    transform: rotate(50deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(-10deg);
+  }
+}
+
+.animate-rotation {
+  animation: rotation 0.5s ease-out 1s forwards;
 }
