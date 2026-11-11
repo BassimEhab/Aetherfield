@@ -6,6 +6,8 @@ export class ArticleService {
     private articlesSignal = signal<IArticles[]>([
         {
             id: 1,
+            createdAt: 'May 7, 2028',
+            author: 'Lana Terra',
             imgSrc: '/article1.avif',
             title: 'How to Build a Climate-Ready Data Stack',
             category: 'Insights', duration: '4 min',
@@ -38,6 +40,8 @@ export class ArticleService {
         },
         {
             id: 2,
+            createdAt: 'May 31, 2028',
+            author: 'Gail Force',
             imgSrc: '/article2.avif',
             title: 'Sustainability Isn\'t a Side Project: Making Impact Operational',
             category: 'Strategy',
@@ -71,6 +75,8 @@ export class ArticleService {
         },
         {
             id: 3,
+            author: 'Theo Retical',
+            createdAt: 'May 31, 2028',
             imgSrc: '/article3.avif',
             title: 'Inside the Aetherfield Model: How We Turn Data Into Action',
             category: 'Insights',
@@ -104,6 +110,8 @@ export class ArticleService {
         },
         {
             id: 4,
+            author: 'Dash Bordman',
+            createdAt: 'July 1, 2028',
             imgSrc: '/article4.avif',
             title: 'From Spreadsheets to Systems: The Evolution of Climate Reporting',
             category: 'Tooling',
@@ -137,6 +145,8 @@ export class ArticleService {
         },
         {
             id: 5,
+            author: 'Al Gorithm',
+            createdAt: 'July 11, 2028',
             imgSrc: '/article5.avif',
             title: 'Carbon Accounting: Myths, Models, and Must-Haves',
             category: 'Tooling',
@@ -171,6 +181,8 @@ export class ArticleService {
         },
         {
             id: 6,
+            author: 'Greta Watt',
+            createdAt: 'August 4, 2028',
             imgSrc: 'article6.avif',
             title: 'Seeing Clearly: Designing Feedback Loops for Sustainable Growth',
             category: 'Strategy',

@@ -1,5 +1,7 @@
 export interface IArticles {
     id: number,
+    author: string,
+    createdAt: string,
     imgSrc: string,
     title: string,
     category: string,
