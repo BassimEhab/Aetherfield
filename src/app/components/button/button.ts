@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class Button {
   @Input({ required: true }) buttonText: string = '';
+  @Input() hideDot: boolean = true;
 }
