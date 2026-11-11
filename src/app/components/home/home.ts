@@ -1,11 +1,11 @@
 import { Component, computed, inject } from '@angular/core';
 import { CallToAction } from '../call-to-action/call-to-action';
 import { Button } from '../button/button';
-import { IArticles } from '../../interfaces/iarticles';
 import { ArticleService } from '../../services/articleService';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [CallToAction, Button],
+  imports: [CallToAction, Button, RouterLink],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',

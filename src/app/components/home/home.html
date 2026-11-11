@@ -97,7 +97,7 @@
   </div>
 </section>
 
-<section class="max-h-140 px-5 py-32 bg-white">
+<section class="max-h-none lg:max-h-140 px-5 py-16 lg:py-32 bg-white">
   <div class="bg-slate-50 mx-auto p-5 max-w-245 flex lg:flex-row flex-col justify-center gap-10">
     <!-- Image Side -->
     <div class="lg:max-w-124.5 w-full">
@@ -123,11 +123,12 @@
   </div>
 </section>
 
-<section class="relative max-h-320 overflow-hidden px-5 py-16">
+<section class="relative overflow-hidden px-5 py-16">
   <div class="relative mx-auto max-w-155 flex flex-col items-center gap-10">
     <!-- SVG -->
     @defer (on viewport) {
-    <div class="absolute top-0 -left-50 rotate-[-10deg] scale-x-120 opacity-0 animate-rotation">
+    <div
+      class="hidden lg:block absolute top-0 -left-50 rotate-[-10deg] scale-x-120 opacity-0 animate-rotation pointer-events-none">
       <img width="" src="/AetherfieldJournal.svg" alt="">
     </div>
     <div class="flex flex-col items-center justify-center gap-10  opacity-0 animate-slide-up">
@@ -138,7 +139,7 @@
         <div class="flex border-t border-gray-300 py-6 gap-4 items-start transition duration-300 hover:translate-x-1.5"
           [class.border-b]="$last">
           <!-- Article Image -->
-          <div class="max-w-41.25 max-h-25"><img class="w-full" [src]="article.imgSrc" alt=""></div>
+          <div class="max-w-41.25 max-h-25 shrink-0"><img class="w-full" [src]="article.imgSrc" alt=""></div>
           <!-- Article Text -->
           <div>
             <h2 class="font-radio font-medium text-[20px] tracking-[-2%] leading-none">{{article.title}}
@@ -153,7 +154,7 @@
         }
       </div>
       <!-- Button -->
-      <div
+      <div routerLink="/journal"
         class="px-3.5 py-2 bg-black text-white cursor-pointer font-geist-mono text-[14px] text-center hover:text-gray-300 transition-colors duration-500">
         <p>View all articles</p>
       </div>
@@ -169,11 +170,12 @@
   <div class="max-w-7xl mx-auto px-5">
     <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
 
-      <div class="w-full max-w-125 shrink-0 aspect-square rounded-2xl overflow-hidden">
+      <div class="w-full md:max-w-125 shrink-0 aspect-square rounded-2xl overflow-hidden">
         <img class="w-full h-full object-cover" src="/image5.avif" alt="Elliot Williams">
       </div>
 
-      <div class="flex flex-col justify-center max-w-xl">
+      @defer(on viewport){
+      <div class="flex flex-col justify-center max-w-xl opacity-0 animate-slide-up">
         <span class="text-light-blue text-5xl font-source-serif leading-none mb-6 select-none">“</span>
         <h2 class="font-radio text-3xl lg:text-[40px] font-bold tracking-[-0.03em] leading-[1.15] text-black mb-8">
           We finally moved past spreadsheets and guesswork. Now we have real data to guide real decisions.
@@ -184,6 +186,10 @@
             Materials</p>
         </div>
       </div>
+      }
+      @placeholder {
+      <div></div>
+      }
 
     </div>
   </div>
