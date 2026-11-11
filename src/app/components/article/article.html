@@ -1,0 +1,49 @@
+<section class="pt-30 pb-10 px-20 max-h[320px] opacity-0 animate-slide-up">
+    <div class="mx-auto text-center flex flex-col justify-center items-center gap-3 max-w-7xl">
+        <p class="font-source-serif font-normal text-[20px] leading-none mt-2 text-gray-500 flex items-center gap-2">
+            <span>{{article()?.category}}</span>
+            <span class="-translate-y-1/5">.</span>
+            <span>{{article()?.duration}}</span>
+        </p>
+        <h2 class="font-radio font-normal lg:text-[80px] md:text-[40px] text-[30px] tracking-[-5%] leading-none">
+            {{article()?.title}}</h2>
+    </div>
+</section>
+
+<section class="p-4 max-w-375 mx-auto opacity-0 animation-slow-slide-up ">
+    <img class="max-h-[604.84px] w-full object-cover" [src]="article()?.imgSrc" alt="">
+</section>
+
+@defer (on viewport) {
+<section class="flex flex-col md:flex-row justify-between gap-8 mx-auto px-20 pt-25 pb-16 opacity-0 animate-slide-up">
+    <div class="flex flex-row md:flex-col justify-between max-w-160 gap-5">
+        <div>
+            <p class="text-gray-500 font-source-serif text-[20px] tracking-[-4%] leading-[1.2]">Published</p>
+            <p class="font-radio text-[20px] tracking-[-2%] leading-none">{{article()?.createdAt}}</p>
+        </div>
+        <div>
+            <p class="text-gray-500 font-source-serif text-[20px] tracking-[-4%] leading-[1.2]">Author</p>
+            <p class="font-radio text-[20px] tracking-[-2%] leading-none">{{article()?.author}}</p>
+        </div>
+    </div>
+    <p
+        class="max-w-185 font-source-serif font-normal leading-[1.4] tracking-[-4%] text-[20px] border-b border-gray-300">
+        {{article()?.intro}}</p>
+</section>
+}
+@placeholder {
+<div></div>
+}
+
+@defer (on viewport) {
+<section
+    class="ml-auto px-20 flex flex-col justify-start items-start gap-5 text-start max-w-225 mb-10 opacity-0 animation-slow-slide-up">
+    @for (articleSection of article()?.body; track $index) {
+    <h2 class="font-radio font-semibold text-[20px] tracking-[-4%]">{{articleSection.sectionTitle}}</h2>
+    <p class="font-source-serif font-normal text-[20px] tracking-[-4%]">{{articleSection.sectionBody}}</p>
+    }
+</section>
+}
+@placeholder {
+<div></div>
+}
