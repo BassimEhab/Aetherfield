@@ -8,7 +8,7 @@
         <!-- article -->
         @for (article of articleService.articles(); track article.id) {
         <div class="flex flex-col gap-5 max-w-3xl cursor-pointer group" tabindex="0" role="link"
-            [routerLink]="['/article', article.id]">
+            [routerLink]="['/articles', article.id]">
             <div><img [src]="article.imgSrc" alt=""></div>
             <div class="transition-opacity duration-300 group-hover:opacity-60">
                 <h2 class="font-radio font-medium text-[20px] tracking-[-2%] leading-none">

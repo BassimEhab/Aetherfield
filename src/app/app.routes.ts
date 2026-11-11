@@ -6,5 +6,6 @@ export const routes: Routes = [
     { path: 'journal', loadComponent: () => import('./components/journal/journal').then((c) => c.Journal) },
     { path: 'about', loadComponent: () => import('./components/about/about').then((c) => c.About) },
     { path: 'careers', loadComponent: () => import('./components/careers/careers').then((c) => c.Careers) },
-    { path: 'article/:id', loadComponent: () => import('./components/article/article').then((c) => c.Article) },
+    { path: 'careers/:id', loadComponent: () => import('./components/career/career').then((c) => c.Career) },
+    { path: 'articles/:id', loadComponent: () => import('./components/article/article').then((c) => c.Article) },
 ];

@@ -1,4 +1,4 @@
-<section class="w-full max-h-89.5 mx-auto py-29 bg-gray-100">
+<section class="w-full max-h-89.5 mx-auto py-29" [class.bg-gray-100]="!isBackgroundTransparent">
     <div class="flex flex-col text-center justify-center gap-5">
         <h2 class="font-radio tracking-[-3%] text-[40px] font-medium leading-none">{{actionTitle}}</h2>
         <app-button [buttonText]="actionButton"></app-button>

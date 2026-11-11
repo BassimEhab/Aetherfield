@@ -24,7 +24,7 @@
             <p class="font-source-serif font-normal text-[20px] leading-[1.2] tracking-[-4%]">
                 {{career.shortDescription}}</p>
         </div>
-        <app-button buttonText="View role" [hideDot]="true"></app-button>
+        <app-button buttonText="View role" [hideDot]="true" [routerLink]="['/careers', career.id]"></app-button>
     </div>
     }
 </section>

@@ -10,4 +10,5 @@ import { Button } from '../button/button';
 export class CallToAction {
   @Input({ required: true }) actionTitle: string = '';
   @Input({ required: true }) actionButton: string = '';
+  @Input() isBackgroundTransparent: boolean = false;
 }
