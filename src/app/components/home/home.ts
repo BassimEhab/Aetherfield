@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CallToAction } from '../call-to-action/call-to-action';
 import { Button } from '../button/button';
+import { IArticles } from '../../interfaces/iarticles';
+import { ArticleService } from '../../services/articleService';
 
 @Component({
   imports: [CallToAction, Button],
@@ -9,6 +11,7 @@ import { Button } from '../button/button';
   templateUrl: './home.html',
 })
 export class Home {
+  protected articleService = inject(ArticleService);
   public features: {
     id: string,
     feature: string,
@@ -30,14 +33,7 @@ export class Home {
       { icon: 'pi pi-arrow-circle-right', title: 'Progress over perfection', description: 'We support real-world momentum—helping organizations move from ambition to measurable change.' }
     ]
 
-  public articles: {
-    imgSrc: string,
-    title: string,
-    category: string,
-    duration: string,
-  }[] = [
-      { imgSrc: '/article1.avif', title: 'How to Build a Climate-Ready Data Stack', category: 'Insights', duration: '4 min' },
-      { imgSrc: '/article2.avif', title: 'Sustainability Isn\'t a Side Project: Making Impact Operational', category: 'Strategy', duration: '7 min' },
-      { imgSrc: '/article3.avif', title: 'Inside the Aetherfield Model: How We Turn Data Into Action', category: 'Insights', duration: '5 min' },
-    ]
+  public articles = computed(() => {
+    return this.articleService.articles().slice(0, 3);
+  })
 }
