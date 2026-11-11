@@ -13,6 +13,7 @@ export class Navbar {
     { label: 'Journal', path: '/journal' },
     { label: 'About', path: '/about' },
     { label: 'Careers', path: '/careers' },
+    { label: 'Get started', path: '' },
   ];
   @ViewChild('navList') navList!: ElementRef;
   public isNavbarVisable: boolean = false;

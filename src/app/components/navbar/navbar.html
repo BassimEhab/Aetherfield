@@ -19,15 +19,15 @@
     @for (link of navbarLinks; track link.path; let isLast = $last) {
     @if (isLast) {
     <div
-      class="flex items-center justify-center gap-1 text-white lg:text-black bg-black lg:bg-transparent p-4 lg:p-0 text-center">
+      class="group cursor-pointer flex items-center justify-center gap-1 text-white lg:text-black bg-black lg:bg-transparent p-4 lg:p-0 text-center hover:opacity-70 transition-opacity duration-150">
       <li>
-        <a [routerLink]="link.path">{{ link.label }}</a>
+        <a [routerLink]="link.path">{{link.label}}</a>
       </li>
-      <i class="hidden! lg:block! pi pi-arrow-right"></i>
+      <i class="hidden! lg:block! pi pi-arrow-right transition-transform duration-200 group-hover:translate-x-1.5"></i>
     </div>
     }
     @else {
-    <li class="lg:py-0 py-6 border-b lg:border-none border-b-gray-100">
+    <li class="lg:py-0 py-6 border-b lg:border-none border-b-gray-100 hover:opacity-70 transition-opacity duration-150">
       <a [routerLink]="link.path">{{ link.label }}</a>
     </li>
     }
