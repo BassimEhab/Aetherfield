@@ -1,59 +1,178 @@
 # Aetherfield
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.6.
+> A sustainability intelligence platform — built to help organizations track emissions, model climate impact, and operationalize ESG goals with clarity and confidence.
 
-## Development server
+This project is a **Figma Community practice build** — a pixel-faithful implementation of a modern SaaS landing site for a fictional climate-tech company called **Aetherfield**.
 
-To start a local development server, run:
+---
+
+## 🌿 About the Project
+
+Aetherfield is a fully responsive, multi-page Angular application styled with Tailwind CSS v4. It replicates a polished, production-quality marketing site for an ESG/sustainability platform, covering everything from a hero landing page to individual job listings and full journal articles.
+
+The design emphasizes:
+- Mixed typography pairings (serif + grotesque + mono)
+- Smooth scroll-triggered animations via CSS keyframes
+- Lazy-loaded components using Angular's `@defer` blocks
+- Signal-based reactive state (Angular Signals)
+- Server-Side Rendering (SSR) with Angular Universal
+
+---
+
+## 🚀 Tech Stack
+
+| Technology | Version | Purpose |
+|---|---|---|
+| **Angular** | ^22.2.0 | Framework (standalone components) |
+| **Angular SSR** | ^22.2.6 | Server-Side Rendering |
+| **Tailwind CSS** | ^4.3.4 | Utility-first styling |
+| **PrimeIcons** | ^8.0.2 | Icon library |
+| **TypeScript** | ~6.0.2 | Type safety |
+| **Express** | ^5.1.0 | SSR server |
+| **Vitest** | ^5.0.0 | Unit testing |
+| **Prettier** | ^3.8.1 | Code formatting |
+
+### Custom Fonts
+- **Radio Canada Big** — primary headings (grotesque)
+- **Source Serif 4** — body copy and secondary headings
+- **Geist Mono** — metadata, labels, and UI elements
+
+---
+
+## 📄 Pages & Routes
+
+| Route | Component | Description |
+|---|---|---|
+| `/product` | `Home` | Hero section, platform features, case study, journal preview, testimonial |
+| `/journal` | `Journal` | Full grid of sustainability articles with cover image |
+| `/articles/:id` | `Article` | Individual article page with rich body sections |
+| `/about` | `About` | Mission, company values, founder story, and team directory |
+| `/careers` | `Careers` | Job listings board with role type and location |
+| `/careers/:id` | `Career` | Individual job description with detailed JD sections |
+
+---
+
+## 🗂 Project Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── home/           # Landing / product page
+│   │   ├── journal/        # Articles listing page
+│   │   ├── article/        # Single article detail page
+│   │   ├── about/          # About page (mission, team, founder)
+│   │   ├── careers/        # Job board listing page
+│   │   ├── career/         # Single job detail page
+│   │   ├── navbar/         # Responsive navigation with mobile drawer
+│   │   ├── footer/         # Site footer
+│   │   ├── button/         # Reusable button component
+│   │   └── call-to-action/ # Reusable CTA banner component
+│   ├── interfaces/
+│   │   ├── iarticles.ts    # Article data model
+│   │   ├── icareer.ts      # Career/job data model
+│   │   └── iteam.ts        # Team member data model
+│   ├── services/
+│   │   ├── articleService.ts   # Articles data (Angular Signals)
+│   │   ├── career-service.ts   # Careers data (Angular Signals)
+│   │   └── teamService.ts      # Team member data (Angular Signals)
+│   ├── app.routes.ts       # Lazy-loaded route definitions
+│   ├── app.config.ts       # Client app configuration
+│   └── app.config.server.ts # SSR app configuration
+├── styles.css              # Global Tailwind theme + CSS animations
+└── index.html
+```
+
+---
+
+## ✨ Key Features
+
+### Animations
+Custom CSS keyframe animations triggered on page load and on viewport entry via Angular `@defer`:
+- **`slideUp`** — elements fade in while sliding up (`0.8s` / `1.2s` variants)
+- **`scaleUp`** — hero dashboard image scales in from zero
+- **`rotation`** — decorative SVGs animate into place with a rotation arc
+
+### Responsive Navbar
+The navbar supports both desktop and mobile layouts:
+- Desktop: transparent with blur backdrop, inline links
+- Mobile: collapsible drawer with slide animation, toggled via PrimeIcons ✕/＋
+
+### Angular Signals
+All data (articles, careers, team members) is managed via Angular's `signal()` API, exposed as read-only computed signals via services — no NgRx or external state library required.
+
+### Lazy Loading with `@defer`
+Heavy above-the-fold content and below-the-fold sections use Angular's `@defer (on viewport)` directive for efficient rendering and Core Web Vitals optimization.
+
+### Server-Side Rendering
+Full SSR support via `@angular/ssr` and an Express server (`dist/Aetherfield/server/server.mjs`).
+
+---
+
+## 🛠 Getting Started
+
+### Prerequisites
+- Node.js ≥ 20
+- npm ≥ 11 (or compatible package manager)
+
+### Install Dependencies
 
 ```bash
+npm install
+```
+
+### Development Server
+
+```bash
+npm start
+# or
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/`. The app auto-reloads on file changes.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Production Build
 
 ```bash
-ng generate component component-name
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Output is placed in `dist/Aetherfield/`.
+
+### Run SSR Server (after build)
 
 ```bash
-ng generate --help
+npm run serve:ssr:Aetherfield
+# Equivalent to: node dist/Aetherfield/server/server.mjs
 ```
 
-## Building
-
-To build the project run:
+### Run Tests
 
 ```bash
-ng build
+npm test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🎨 Design Notes
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+The color palette is defined as a Tailwind v4 `@theme` block in [`styles.css`](src/styles.css):
 
-```bash
-ng test
-```
+| Token | Value | Usage |
+|---|---|---|
+| `light-blue` | `oklch(85.2% 0.077 249.3)` | Hero and careers backgrounds |
+| `light-beige` | `oklch(97% 0.03 83.6)` | Gradient endpoints |
+| `bright-yellow` | `oklch(94.9% 0.183 106.1)` | Accent |
+| `oil-green` | `oklch(49% 0.1 108.1)` | Secondary accent |
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📌 Notes
 
-```bash
-ng e2e
-```
+- This is a **practice/learning project** built from a Figma Community design file.
+- All content (company name, team members, articles, job listings) is **fictional and for demonstration purposes only**.
+- The app uses Angular standalone components throughout — no `NgModule` declarations.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*Built with ❤️ as part of a frontend learning journey.*
